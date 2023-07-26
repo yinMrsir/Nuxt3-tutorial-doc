@@ -2,6 +2,9 @@ import { defaultTheme } from 'vuepress'
 
 module.exports = {
   theme: defaultTheme({
+    title: 'VuePress',
+    logo: 'https://nuxt.com.cn/assets/design-kit/logo/full-logo-green-dark.svg',
+    logoDark: 'https://nuxt.com.cn/assets/design-kit/logo/full-logo-green-light.svg',
     // 默认主题配置
     navbar: [
       {
@@ -10,7 +13,7 @@ module.exports = {
       },
       {
         text: 'Nuxt3教程',
-        link: '/guide/nuxt3-introduction',
+        link: '/nuxt3/introduction',
       },
       {
         text: '淳渔CMS',
@@ -20,17 +23,17 @@ module.exports = {
     sidebar: [
       {
         text: '什么是 SPA, CSR, SSR, SSG？',
-        link: '/guide/csr-ssr-ssg'
+        link: '/nuxt3/csr-ssr-ssg'
       },
       {
         text: 'Nuxt3入门',
         children: [
           {
-            link: '/guide/nuxt3-introduction',
+            link: '/nuxt3/introduction',
             text: 'Nuxt3框架的背景和特点'
           },
           {
-            link: '/nuxt3-installation',
+            link: '/nuxt3/installation',
             text: '下载和安装Nuxt3'
           },
           {
