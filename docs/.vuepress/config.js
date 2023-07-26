@@ -19,8 +19,11 @@ module.exports = {
     ],
     sidebar: [
       {
+        text: '什么是 SPA, CSR, SSR, SSG？',
+        link: '/guide/csr-ssr-ssg'
+      },
+      {
         text: 'Nuxt3入门',
-        collapsible: true,
         children: [
           {
             link: '/guide/nuxt3-introduction',
@@ -46,7 +49,6 @@ module.exports = {
       },
       {
         text: 'Nuxt3的核心功能',
-        collapsible: true,
         children: [
           {
             link: '/nuxt3-router',
@@ -68,7 +70,6 @@ module.exports = {
       },
       {
         text: '项目实战',
-        collapsible: true,
         children: [
           {
             link: '/project-analysis',
