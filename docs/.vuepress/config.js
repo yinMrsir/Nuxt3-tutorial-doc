@@ -22,8 +22,13 @@ module.exports = {
     ],
     sidebar: [
       {
-        text: '什么是 SPA, CSR, SSR, SSG？',
-        link: '/nuxt3/csr-ssr-ssg'
+        text: '学前准备',
+        children: [
+          {
+            link: '/nuxt3/csr-ssr-ssg',
+            text: '什么是 SPA, CSR, SSR, SSG？',
+          }
+        ]
       },
       {
         text: 'Nuxt3入门',
