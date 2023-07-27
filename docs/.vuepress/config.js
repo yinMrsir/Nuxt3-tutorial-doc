@@ -42,8 +42,8 @@ module.exports = {
             text: '下载和安装Nuxt3'
           },
           {
-            link: '/nuxt3-create-project',
-            text: '创建一个新项目并运行起来'
+            link: '/nuxt3/element-plus',
+            text: '安装和使用Element Plus组件库'
           },
           {
             link: '/nuxt3-file-structure',
