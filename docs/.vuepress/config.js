@@ -2,7 +2,6 @@ import { defaultTheme } from 'vuepress'
 
 module.exports = {
   theme: defaultTheme({
-    title: 'VuePress',
     logo: 'https://nuxt.com.cn/assets/design-kit/logo/full-logo-green-dark.svg',
     logoDark: 'https://nuxt.com.cn/assets/design-kit/logo/full-logo-green-light.svg',
     // 默认主题配置
