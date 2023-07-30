@@ -46,61 +46,11 @@ module.exports = {
             text: '安装和使用Element Plus组件库'
           },
           {
-            link: '/nuxt3-file-structure',
-            text: '理解和配置Nuxt3的文件结构和配置文件'
-          },
-          {
-            link: '/nuxt3-templates-and-layouts',
-            text: '学习如何使用Nuxt3的模板和布局'
+            link: '/nuxt3/file-structure',
+            text: '国际化'
           },
         ]
       },
-      {
-        text: 'Nuxt3的核心功能',
-        children: [
-          {
-            link: '/nuxt3-router',
-            text: '使用Nuxt3的路由系统实现页面间的导航和传参'
-          },
-          {
-            link: '/nuxt3-components',
-            text: '学习如何创建和复用组件'
-          },
-          {
-            link: '/nuxt3-state-management',
-            text: '使用Nuxt3的状态管理工具管理应用的数据'
-          },
-          {
-            link: '/nuxt3-async-data-and-ssr',
-            text: '掌握Nuxt3的异步数据获取和服务器端渲染(SSR)'
-          },
-        ]
-      },
-      {
-        text: '项目实战',
-        children: [
-          {
-            link: '/project-analysis',
-            text: '分析并设计一个具体的项目需求'
-          },
-          {
-            link: '/project-setup',
-            text: '搭建项目的基本结构和界面'
-          },
-          {
-            link: '/project-feature-development',
-            text: '开发功能模块，并实现与后端API的交互'
-          },
-          {
-            link: '/project-testing-and-optimization',
-            text: '进行项目测试和优化'
-          },
-          {
-            link: '/project-deployment',
-            text: '部署项目到服务器并进行上线'
-          },
-        ]
-      }
     ]
   }),
 }
