@@ -90,3 +90,7 @@ export default defineNuxtConfig({
 * 根据需要自动导入指令和样式。
 * 自动从@element-plus/icons-vue导入图标。
 * 自动导入ElMessage、ElNotification等方法。
+
+::: tip
+我们还可以动态导入一个组件，你所需要做的就是在组件名称前添加Lazy前缀， 例如上方代码中的：LazyElButton，可以延迟加载组件代码，直到合适的时刻，这有助于优化你的JavaScript包大小。
+:::

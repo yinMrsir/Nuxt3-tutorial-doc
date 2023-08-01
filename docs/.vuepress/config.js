@@ -45,7 +45,7 @@ module.exports = {
             text: '安装和使用Element Plus组件库'
           },
           {
-            link: '/nuxt3/file-structure',
+            link: '/nuxt3/internationalization',
             text: '国际化'
           },
         ]
