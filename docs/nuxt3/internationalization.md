@@ -40,4 +40,64 @@ export default defineNuxtConfig({
 })
 ```
 
+- **步骤 3**: 项目目录下创建 i18n.config.ts:
+```ts
+export default defineI18nConfig(() => ({
+  locale: 'cn',
+  messages: {
+    en: {
+      home: 'Homepage'
+    },
+    cn: {
+      home: '首页'
+    },
+    russ: {
+      home: 'Первая страница'
+    }
+  }
+}))
+```
+
+## 使用
+```vue
+<template>
+  <el-button>{{ i18n.t('home') }}</el-button>
+</template>
+
+<script setup>
+  const i18n = useI18n();
+  
+  console.log(i18n.t('home')); // 首页
+</script>
+```
+
+## 语言切换
+```vue
+<template>
+  <el-select v-model="locale" @change="handleLanguage">
+    <el-option v-for="(item, key) in locales" :index="key" :value="key" :label="item"></el-option>
+  </el-select>
+</template>
+
+<script setup lang="ts">
+const { locale } = useI18n()
+
+const locales = ref({
+  cn: '简体中文',
+  en: 'English',
+  russ: 'Русский'
+})
+
+/** 获取本地存储的语言 */
+const language= useCookie<string>('language')
+if (language.value) {
+  locale.value = language.value
+}
+
+/** 语言切换 */
+const handleLanguage = (value: string | null | undefined) => {
+  language.value = value
+}
+</script>
+```
 

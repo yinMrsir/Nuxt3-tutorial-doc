@@ -30,7 +30,7 @@ module.exports = {
         ]
       },
       {
-        text: 'Nuxt3入门',
+        text: 'Nuxt3安装及模块使用',
         children: [
           {
             link: '/nuxt3/introduction',
@@ -47,6 +47,10 @@ module.exports = {
           {
             link: '/nuxt3/internationalization',
             text: '国际化'
+          },
+          {
+            link: '/nuxt3/dayjs',
+            text: '使用DayJS作为插件'
           },
         ]
       },
