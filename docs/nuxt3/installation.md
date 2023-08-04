@@ -1,10 +1,15 @@
+---
+lang: zh-CN
+title: 下载和安装Nuxt3 - Nuxt3实战教程
+---
+
 # 下载和安装Nuxt3
 
 ## 依赖环境
 - [Node.js v16.11.0+](https://nodejs.org/)
 
 ## 创建项目
-- **步骤 1**: 打开一个终端，并使用以下命令创建一个新的启动项目(这里项目名以nuxt-app为例):
+- **步骤 1**: 打开一个终端，并使用以下命令创建一个新的启动项目(这里项目名以nuxt-app为例)，你还可以在此处直接下载[nuxt-app](/nuxt-app.rar)。
 
 <CodeGroup>
   <CodeGroupItem title="npx" active>

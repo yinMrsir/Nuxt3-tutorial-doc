@@ -1,3 +1,8 @@
+---
+lang: zh-CN
+title: 国际化(i18n使用) - Nuxt3实战教程
+---
+
 # 国际化
 
 如果你有国际化的需求，我们可以使用i18n。
@@ -32,15 +37,7 @@ pnpm install --shamefully-hoist -D @nuxtjs/i18n@next
   </CodeGroupItem>
 </CodeGroup>
 
-- **步骤 2**: 将下面的代码写入你的配置文件:
-```ts
-// nuxt.config.ts
-export default defineNuxtConfig({
-  modules: ['@nuxtjs/i18n'],
-})
-```
-
-- **步骤 3**: 项目目录下创建 i18n.config.ts:
+- **步骤 2**: 项目目录下创建 i18n.config.ts:
 ```ts
 export default defineI18nConfig(() => ({
   locale: 'cn',
@@ -56,6 +53,16 @@ export default defineI18nConfig(() => ({
     }
   }
 }))
+```
+- **步骤 3**: 将下面的代码写入你的配置文件:
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  },
+})
 ```
 
 ## 使用

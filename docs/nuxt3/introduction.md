@@ -1,3 +1,8 @@
+---
+lang: zh-CN
+title: Nuxt3框架的背景及特点 - Nuxt3实战教程
+---
+
 # Nuxt3框架的背景及特点
 
 ## 1. 背景

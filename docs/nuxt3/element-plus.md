@@ -1,3 +1,8 @@
+---
+lang: zh-CN
+title: 安装和使用Element Plus组件库 - Nuxt3实战教程
+---
+
 # 安装和使用Element Plus组件库
 
 现在我们完成了第一步，启动了一个项目，接下来我们为了快速编写我们的网站界面，需要引入UI组件库，我们这里选择ElementUI，接下来我们安装并使用它。
@@ -71,6 +76,10 @@ pnpm install @element-plus/nuxt -D
 // nuxt.config.ts
 export default defineNuxtConfig({
   modules: ['@element-plus/nuxt'],
+  css: [
+    'element-plus/dist/index.css',
+    'element-plus/theme-chalk/display.css'
+  ],
 })
 ```
 

@@ -30,7 +30,7 @@ module.exports = {
         ]
       },
       {
-        text: 'Nuxt3安装及模块使用',
+        text: 'Nuxt3安装',
         children: [
           {
             link: '/nuxt3/introduction',
@@ -40,6 +40,11 @@ module.exports = {
             link: '/nuxt3/installation',
             text: '下载和安装Nuxt3'
           },
+        ]
+      },
+      {
+        text: '使用模块及插件',
+        children: [
           {
             link: '/nuxt3/element-plus',
             text: '安装和使用Element Plus组件库'
@@ -50,10 +55,36 @@ module.exports = {
           },
           {
             link: '/nuxt3/dayjs',
-            text: '使用DayJS作为插件'
+            text: '使用DayJS'
           },
         ]
       },
+      {
+        text: '页面开发（更新中...）',
+        children: [
+          {
+            link: '/nuxt3/layout',
+            text: '公共部分(layout)'
+          }
+        ]
+      },
+      {
+        text: '常见问题汇总',
+        link: '/nuxt3/question'
+      },
     ]
   }),
+  head: [
+    [
+      'script',
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9edadaa49ae4e9c979c6724865c04b05";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode?.insertBefore(hm, s);
+      })()`
+    ]
+  ]
 }

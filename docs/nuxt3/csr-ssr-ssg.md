@@ -1,3 +1,8 @@
+---
+lang: zh-CN
+title: 什么是 SPA, CSR, SSR, SSG？- Nuxt3实战教程
+---
+
 # 什么是 SPA, CSR, SSR, SSG？
 
 在现代的Web开发中，SPA、CSR、SSR和SSG是常常被提及的概念。它们代表了不同的前端开发模式和技术。本文将详细介绍SPA、CSR、SSR和SSG的含义、使用场景以及它们在前端开发中的作用。
