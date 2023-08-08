@@ -8,4 +8,13 @@
 
 源码：[淳渔CMS](https://gitee.com/chunyu-cms/chunyu-cms)
 
+## 学前须知
 
+此教程主要是讲Nuxt3开发项目，HTML, CSS不会在此教程做过多的讲解。所以你最好熟悉以下技术点：
+
+- HTML
+- CSS
+- Javascript
+- Vue2或Vue3(不会的最好观看[视频学习](https://www.bilibili.com/video/BV1gu4y1R7Jt/?spm_id_from=333.788&vd_source=9dbe815ca79d8528e02be1a51583912a)本教程)
+
+微信公众号搜索**前端老鹰**：每日为您分享前端知识点。
