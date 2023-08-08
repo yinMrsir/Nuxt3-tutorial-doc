@@ -6,7 +6,7 @@ tagline: 实战手把手 视频图文教程，轻松上手
 heroImage: https://nuxt.com.cn/assets/design-kit/logo/icon-green.svg
 actions:
 - text: 开始学习
-  link: /nuxt3/csr-ssr-ssg
+  link: /nuxt3
   type: primary
 - text: 演示
   link: http://cms.yinchunyu.com

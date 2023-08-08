@@ -24,6 +24,10 @@ module.exports = {
         text: '学前准备',
         children: [
           {
+            link: '/nuxt3',
+            text: '介绍',
+          },
+          {
             link: '/nuxt3/csr-ssr-ssg',
             text: '什么是 SPA, CSR, SSR, SSG？',
           }
@@ -63,8 +67,20 @@ module.exports = {
         text: '页面开发（更新中...）',
         children: [
           {
+            link: '/nuxt3/sass',
+            text: '安装css扩展语言-Sass'
+          },
+          {
+            link: '/nuxt3/main-css',
+            text: '基础样式编写'
+          },
+          {
             link: '/nuxt3/layout',
-            text: '公共部分(layout)'
+            text: '公共部分(头部、底部)编写'
+          },
+          {
+            link: '/nuxt3/create-index',
+            text: '首页编写'
           }
         ]
       },

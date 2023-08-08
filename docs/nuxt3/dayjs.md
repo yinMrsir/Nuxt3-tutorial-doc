@@ -105,9 +105,7 @@ export default defineNuxtConfig({
 #### 使用
 ```vue
 <template>
-  <div>
-    {{ dayjs(1691025478849).format('YYYY-MM-DD') }}
-  </div>
+  <div>{{ $dayjs(1691025478849).format('YYYY') }}</div>
 </template>
 
 <script setup>

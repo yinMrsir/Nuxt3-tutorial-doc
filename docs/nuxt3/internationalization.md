@@ -15,7 +15,7 @@ title: 国际化(i18n使用) - Nuxt3实战教程
   <CodeGroupItem title="yarn" active>
 
 ```bash
-yarn add @nuxtjs/i18n -D
+yarn add @nuxtjs/i18n@next -D
 ```
 
   </CodeGroupItem>
