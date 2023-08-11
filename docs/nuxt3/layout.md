@@ -109,6 +109,8 @@ function handleCommand(command: string) {
 
 function logOut() {}
 
+function goLogin() {}
+
 function handleSearch() {
   navigateTo('/search?keyword=' + searchValue.value)
 }
@@ -162,6 +164,51 @@ function handleSearch() {
   }
   &__height__placeholder {
     height: 55px;
+  }
+}
+
+
+@media only screen and (max-width:991px){
+  .header {
+    position: relative;
+
+    .mobile-nav {
+      border-top: $light-gray solid 1px;
+      background: $drak-blue;
+      position: absolute;
+      height: 46px;
+      bottom: -46px;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      padding-top: 8px;
+      z-index: 9;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      ul {
+        white-space: nowrap;
+        li {
+          display: inline-block;
+          position: relative;
+          &.active {
+            a {
+              color: #1583f3;
+            }
+          }
+          a {
+            display: inline-block;
+            padding: 5px 19px;
+            color: #ffffff;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .header__height__placeholder {
+    height: 46px;
   }
 }
 </style>

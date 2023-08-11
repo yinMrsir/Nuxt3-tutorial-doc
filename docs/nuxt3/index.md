@@ -8,6 +8,8 @@
 
 源码：[淳渔CMS](https://gitee.com/chunyu-cms/chunyu-cms)
 
+接口文档地址：[Api文档](http://api.yinchunyu.com/swagger-ui)
+
 ## 学前须知
 
 此教程主要是讲Nuxt3开发项目，HTML, CSS不会在此教程做过多的讲解。所以你最好熟悉以下技术点：

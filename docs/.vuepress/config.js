@@ -81,6 +81,10 @@ module.exports = {
           {
             link: '/nuxt3/create-index',
             text: '首页编写'
+          },
+          {
+            link: '/nuxt3/header-data',
+            text: '数据请求封装及导航栏数据获取'
           }
         ]
       },
