@@ -173,8 +173,8 @@ function handleSearch() {
     position: relative;
 
     .mobile-nav {
-      border-top: $light-gray solid 1px;
-      background: $drak-blue;
+      border-top: #666 solid 1px;
+      background: #292838;
       position: absolute;
       height: 46px;
       bottom: -46px;

@@ -85,6 +85,10 @@ module.exports = {
           {
             link: '/nuxt3/header-data',
             text: '数据请求封装及导航栏数据获取'
+          },
+          {
+            link: '/nuxt3/index-data',
+            text: '首页数据获取'
           }
         ]
       },

@@ -1,4 +1,4 @@
-# 头部和首页数据对接
+# 数据请求封装及导航栏数据获取
 
 在数据对接前我们要处理一个跨域的问题，因为我们是前后端分离的项目，很可能接口和访问域不在同一个。
 
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     // 该配置用于服务端请求转发
     routeRules: {
       '/server/**': {
-        proxy: 'http://cms.yinchunyu.com/server/**'
+        proxy: 'http://api.yinchunyu.com/**'
       }
     }
   }
@@ -60,11 +60,11 @@ export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<
     },
     onResponse({ response }) {
       if (+response._data.code !== 200) {
-        ElMessage.error(response._data.msg)
+        process.client && ElMessage.error(response._data.msg)
       }
     },
     onResponseError({ response }) {
-      ElMessage.error(response._data.data.msg)
+      process.client && ElMessage.error(response._data.data.msg)
     },
   }
 
