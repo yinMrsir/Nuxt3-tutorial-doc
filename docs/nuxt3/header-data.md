@@ -46,6 +46,10 @@ touch composables/useServerRequest.ts
 import { useFetch, UseFetchOptions } from "#app";
 import { merge } from 'lodash'
 
+function isArray(str: unknown) {
+  return Object.prototype.toString.call(str) === '[object Array]'
+}
+
 export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<T, unknown>) => {
   const token = useCookie('token')
   const runtimeConfig = useRuntimeConfig()
@@ -59,12 +63,12 @@ export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<
       }
     },
     onResponse({ response }) {
-      if (+response._data.code !== 200) {
+      if (+response._data.statusCode === 200 && +response._data.code !== 200) {
         process.client && ElMessage.error(response._data.msg)
       }
     },
     onResponseError({ response }) {
-      process.client && ElMessage.error(response._data.data.msg)
+      process.client && ElMessage.error(isArray(response._data.data.msg) ? response._data.data.msg[0] : response._data.data.msg)
     },
   }
 

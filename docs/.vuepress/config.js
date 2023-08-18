@@ -89,6 +89,10 @@ module.exports = {
           {
             link: '/nuxt3/index-data',
             text: '首页数据获取'
+          },
+          {
+            link: '/nuxt3/column',
+            text: '栏目页实现'
           }
         ]
       },
