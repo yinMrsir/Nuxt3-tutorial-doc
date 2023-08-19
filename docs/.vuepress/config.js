@@ -93,6 +93,10 @@ module.exports = {
           {
             link: '/nuxt3/column',
             text: '栏目页实现'
+          },
+          {
+            link: '/nuxt3/show',
+            text: '筛选页实现'
           }
         ]
       },
