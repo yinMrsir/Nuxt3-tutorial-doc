@@ -329,9 +329,9 @@ const [
       value: params.column
     }
   }),
-  useAsyncData<any>>('data', () => useClientRequest('/movie/list', {
+  useAsyncData<any>('data', () => useClientRequest('movie/list', {
     query: {
-      columnValue: query.columnValue,
+      columnValue: params.column,
       genres: query.t,
       country: query.c,
       language: query.l,
@@ -344,20 +344,14 @@ const [
 ])
 ```
 
-接下来处理筛选条件的数据和左侧的榜单数据相关代码如下：
+**接下来处理筛选条件的数据和左侧的榜单数据相关代码如下：**
 
 ```ts
-const dayjs = useDayjs()
-const currTime = dayjs().format('YYYY-MM-DD')
-const weekStartTime = dayjs().subtract(7, 'day').format('YYYY-MM-DD')
-const mouthStartTime = dayjs().subtract(30, 'day').format('YYYY-MM-DD')
-
 const [
   { data: genreList },
   { data: countryList },
   { data: languageList },
-  { data: weekList },
-  { data: monthList },
+  { data: rank },
   { data: info },
   { data: movieList, pending, refresh }
 ] = await Promise.all([
@@ -371,24 +365,12 @@ const [
   useServerRequest<IResData<{name: string; id: number}[]>>('basic/country/all'),
   // 语言
   useServerRequest<IResData<{name: string; id: number}[]>>('basic/language/all'),
-  // 周榜单
-  useServerRequest<IResPage<any[]>>('movie/list', {
+  // 榜单
+  useServerRequest<IResData<any>>('movie/leaderboard', {
     query: {
       columnValue: params.column,
       pageNum: query.page || 1,
       pageSize: 20,
-      orderBy: 'pv',
-      date: [weekStartTime, currTime]
-    }
-  }),
-  // 月榜单
-  useServerRequest<IResPage<any[]>>('movie/list', {
-    query: {
-      columnValue: params.column,
-      pageNum: query.page || 1,
-      pageSize: 20,
-      orderBy: 'pv',
-      date: [mouthStartTime, currTime]
     }
   }),
   // 栏目信息
@@ -424,5 +406,68 @@ export interface IResPage<T> extends IResOptions {
 
 export interface IResData<T> extends IResOptions {
   data: T
+}
+```
+
+替换`template`中的内容
+```vue
+<template>
+  <!-- ...  -->
+  <el-col :span="6" class="hidden-sm-and-down">
+    <!--   周榜单     -->
+    <div class="panel_hd items-center">
+      <h3 class="title items-center">
+        周榜单
+      </h3>
+    </div>
+    <ul class="col-pd mb-20">
+      <li v-for="(item, index) in rank.data.weekRank">
+        <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="between">
+          <div>
+            <span class="badge">{{ index + 1 }}</span>
+            {{ item.title }}
+          </div>
+          <span class="text-muted">{{ +item.theEnd === 0 ? '未完结' : '已完结' }}</span>
+        </nuxt-link>
+      </li>
+    </ul>
+    <!--   月榜单     -->
+    <div class="panel_hd items-center">
+      <h3 class="title items-center">
+        月榜单
+      </h3>
+    </div>
+    <ul class="col-pd">
+      <li v-for="(item, index) in rank.data.mouthRank">
+        <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="between">
+          <div>
+            <span class="badge">{{ index + 1 }}</span>
+            {{ item.title }}
+          </div>
+          <span class="text-muted">{{ +item.theEnd === 0 ? '未完结' : '已完结' }}</span>
+        </nuxt-link>
+      </li>
+    </ul>
+  </el-col>
+  <!--  ... -->
+</template>
+```
+
+修复分页后切换类型后出现的bug:
+```ts
+async function handleCurrentChange(page: number) {
+  // 此处重新获取route 
+  const route = useRoute()
+  await navigateTo({
+    path: route.path,
+    query: {
+      ...route.query,
+      orderBy: orderBy.value,
+      page
+    }
+  })
+  if (process.client) {
+    window.scrollTo(0, 0)
+  }
 }
 ```

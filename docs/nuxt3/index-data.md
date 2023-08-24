@@ -30,7 +30,9 @@
           </div>
           <div class="panel_hd__right items-center">
             <ul class="items-center">
-              <li class="hidden-sm-and-down" v-for="item in categoryItem.genres"><nuxt-link :to="`/column/${categoryItem.value}/${item.id}`">{{ item.name }}</nuxt-link></li>
+              <li class="hidden-sm-and-down" v-for="item in categoryItem.genres">
+                <nuxt-link :to="`/column/${categoryItem.value}/show?t=${item.name}`">{{ item.name }}</nuxt-link>
+              </li>
               <li>
                 <nuxt-link :to="`/column/${categoryItem.value}`" class="items-center">
                   更多 <el-icon><ElIconArrowRight /></el-icon>
