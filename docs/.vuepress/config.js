@@ -97,6 +97,10 @@ module.exports = {
           {
             link: '/nuxt3/show',
             text: '筛选页实现'
+          },
+          {
+            link: '/nuxt3/common',
+            text: '公共部分提取和定义ts类型'
           }
         ]
       },

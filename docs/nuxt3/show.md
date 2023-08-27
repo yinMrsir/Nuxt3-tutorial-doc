@@ -369,7 +369,7 @@ const [
   useServerRequest<IResData<any>>('movie/leaderboard', {
     query: {
       columnValue: params.column,
-      pageNum: query.page || 1,
+      pageNum: 1,
       pageSize: 20,
     }
   }),

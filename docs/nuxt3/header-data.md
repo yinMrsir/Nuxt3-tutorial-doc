@@ -44,7 +44,6 @@ touch composables/useServerRequest.ts
 ```ts
 // composables/useServerRequest.ts
 import { useFetch, UseFetchOptions } from "#app";
-import { merge } from 'lodash'
 
 function isArray(str: unknown) {
   return Object.prototype.toString.call(str) === '[object Array]'
@@ -72,7 +71,7 @@ export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<
     },
   }
 
-  return useFetch<T>( url, merge(defaultOptions, opts) as any)
+  return useFetch<T>( url, {...defaultOptions, ...opts} as any)
 }
 ```
 
