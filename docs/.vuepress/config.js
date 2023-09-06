@@ -64,7 +64,7 @@ module.exports = {
         ]
       },
       {
-        text: '页面开发（更新中...）',
+        text: '页面开发',
         children: [
           {
             link: '/nuxt3/sass',
@@ -101,6 +101,51 @@ module.exports = {
           {
             link: '/nuxt3/common',
             text: '公共部分提取和定义ts类型'
+          },
+          {
+            link: '/nuxt3/movie',
+            text: '影视详情'
+          },
+          {
+            link: '/nuxt3/static-proxy',
+            text: '静态文件代理'
+          },
+          {
+            text: '视频详情开发',
+            link: '/nuxt3/video'
+          },
+          {
+            text: '登录/注册',
+            link: '/nuxt3/login'
+          },
+          {
+            text: '影视详情-收藏和评分',
+            link: '/nuxt3/movie-more'
+          },
+          {
+            text: '视频详情-购买影视',
+            link: '/nuxt3/video-buy'
+          },
+          {
+            text: '用户中心和中间件',
+            link: '/nuxt3/user'
+          },
+          {
+            text: '金币记录页',
+            link: '/nuxt3/wallet-log'
+          }
+        ]
+      },
+      {
+        text: '打包部署',
+        children: [
+          {
+            text: '细节优化和打包',
+            link: '/nuxt3/build'
+          },
+          {
+            text: '部署到服务器',
+            link: '/nuxt3/deploy'
           }
         ]
       },

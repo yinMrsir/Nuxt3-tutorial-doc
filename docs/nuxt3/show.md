@@ -75,7 +75,7 @@ touch pages/column/\[column\]/show.vue
           <el-row :gutter="20" v-if="movieList.total !== 0">
             <el-col :sm="4" :xs="8" v-for="item in movieList.rows">
               <div class="video-list__block">
-                <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="img-box">
+                <nuxt-link :to="`/column/${item.columnValue}/${item.id}`" class="img-box">
                   <el-image class="video-list__block__img" :src="item.poster" fit="cover" />
                   <span v-if="item.movieRate">{{ +item.movieRate.rate === 0 ? '暂无评分' : item.movieRate.rate.toFixed(1) }}</span>
                 </nuxt-link>
@@ -113,7 +113,7 @@ touch pages/column/\[column\]/show.vue
         </div>
         <ul class="col-pd mb-20">
           <li v-for="(item, index) in weekList.rows">
-            <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="between">
+            <nuxt-link :to="`/column/${item.columnValue}/${item.id}`" class="between">
               <div>
                 <span class="badge">{{ index + 1 }}</span>
                 {{ item.title }}
@@ -292,19 +292,19 @@ function isArray(str: unknown) {
 }
 
 export const useClientRequest = <T= unknown>(url: string, opts?: FetchOptions) => {
-  const userInfo = useCookie<{ token: string }>('userInfo')
+  const token = useCookie<string>('token')
   const runtimeConfig = useRuntimeConfig()
 
   const defaultOptions: FetchOptions = {
     baseURL: runtimeConfig.public.baseUrl,
     onRequest({ options }) {
       options.headers = (options.headers || {}) as { [key: string]: string }
-      if (userInfo.value?.token) {
-        options.headers.Authorization = 'Bearer ' + userInfo.value.token
+      if (token.value) {
+        options.headers.Authorization = 'Bearer ' + token.value
       }
     },
     onResponse({ response }) {
-      if (+response._data.statusCode === 200 && +response._data.code !== 200) {
+      if (+response.status === 200 && +response._data.code !== 200) {
         ElMessage.error(response._data.msg)
       }
     },

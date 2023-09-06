@@ -62,7 +62,7 @@ export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<
       }
     },
     onResponse({ response }) {
-      if (+response._data.statusCode === 200 && +response._data.code !== 200) {
+      if (+response.status === 200 && +response._data.code !== 200) {
         process.client && ElMessage.error(response._data.msg)
       }
     },

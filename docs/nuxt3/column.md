@@ -60,7 +60,7 @@ const route = useRoute()
             <el-row :gutter="20">
               <el-col :sm="4" :xs="8" v-for="item in categoryItem.rows">
                 <div class="video-list__block">
-                  <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="img-box">
+                  <nuxt-link :to="`/column/${item.columnValue}/${item.id}`" class="img-box">
                     <el-image lazy class="video-list__block__img" :src="item.poster" fit="cover" />
                     <span v-if="item.movieRate">{{ +item.movieRate.rate === 0 ? '暂无评分' : item.movieRate.rate.toFixed(1) }}</span>
                   </nuxt-link>
@@ -86,7 +86,7 @@ const route = useRoute()
           </div>
           <ul class="col-pd">
             <li v-for="(item, index) in categoryItem.ranks">
-              <nuxt-link :to="`/column/${item.columnValue}/movie/${item.id}`" class="between">
+              <nuxt-link :to="`/column/${item.columnValue}/${item.id}`" class="between">
                 <div>
                   <span class="badge">{{ index + 1 }}</span>
                   {{ item.title }}
