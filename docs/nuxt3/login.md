@@ -18,8 +18,8 @@ touch composables/states.ts
 ```typescript
 /** 用户信息 **/
 export const useToken = () => useState<string>('token', () => {
-  const userInfo = useCookie<{ token: string | undefined }>('userInfo')
-  return userInfo.value ? 'Bearer ' + userInfo.value.token : ''
+  const token = useCookie<{ token: string | undefined }>('token')
+  return token.value ? 'Bearer ' + token.value : ''
 })
 
 /** 登录弹层显示状态 */

@@ -309,7 +309,7 @@ export const useClientRequest = <T= unknown>(url: string, opts?: FetchOptions) =
       }
     },
     onResponseError({ response }) {
-      ElMessage.error(isArray(response._data.data.msg) ? response._data.data.msg[0] : response._data.data.msg)
+      ElMessage.error(isArray(response._data.msg) ? response._data.msg[0] : response._data.msg)
     },
   }
 

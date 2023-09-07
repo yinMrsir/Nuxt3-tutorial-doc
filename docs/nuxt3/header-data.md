@@ -67,7 +67,7 @@ export const useServerRequest = <T= unknown>(url: string, opts: UseFetchOptions<
       }
     },
     onResponseError({ response }) {
-      process.client && ElMessage.error(isArray(response._data.data.msg) ? response._data.data.msg[0] : response._data.data.msg)
+      process.client && ElMessage.error(isArray(response._data.msg) ? response._data.msg[0] : response._data.msg)
     },
   }
 

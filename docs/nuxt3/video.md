@@ -449,7 +449,7 @@ player = new Player.default({
           type: 'warning',
         }
     ).then(async () => {
-      const { code, msg } = await useClientRequest<ResData<UserMovieBase>>(`/user-movie`, {
+      const { code, msg } = await useClientRequest<ResData<UserMovieBase>>(`user-movie`, {
         method: 'post',
         body: { movieId: detail.movieId }
       })
@@ -475,14 +475,14 @@ player = new Player.default({
     { data: likeRows },
     { data: rank },
   ] = await Promise.all([
-    useServerRequest<ResPage<MovieItem[]>>(`/movie/list`, {
+    useServerRequest<ResPage<MovieItem[]>>(`movie/list`, {
       query: {
         genres: detail.movie.genres.split(',')[0],
         pageNum: 1,
         pageSize: 18,
       }
     }),
-    useServerRequest<ResData<LeaderboardItem>>('/movie/leaderboard', {
+    useServerRequest<ResData<LeaderboardItem>>('movie/leaderboard', {
       query: {
         columnValue: detail.movie.columnValue,
         pageNum: 1,

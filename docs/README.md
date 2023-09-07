@@ -9,7 +9,7 @@ actions:
   link: /nuxt3
   type: primary
 - text: 演示
-  link: http://cms.yinchunyu.com
+  link: https://cms.yinchunyu.com
   type: secondary
 features:
 - title: Vue3支持
