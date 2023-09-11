@@ -140,11 +140,11 @@ module.exports = {
         text: '打包部署',
         children: [
           {
-            text: '细节优化和打包',
-            link: '/nuxt3/build'
+            text: '细节优化',
+            link: '/nuxt3/optimize'
           },
           {
-            text: '部署到服务器',
+            text: '打包部署到服务器',
             link: '/nuxt3/deploy'
           }
         ]
