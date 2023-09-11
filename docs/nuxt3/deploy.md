@@ -51,7 +51,7 @@ module.exports = {
 
 3. 到项目目录启动
 ```shell
-pm2 pm2.config.js
+pm2 start pm2.config.js
 ```
 
 ### 使用域名访问
