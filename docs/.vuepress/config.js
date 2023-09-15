@@ -15,6 +15,15 @@ module.exports = {
         link: '/nuxt3/introduction',
       },
       {
+        text: '生态系统',
+        children: [
+          {
+            text: 'Redis',
+            link: '/other/redis'
+          }
+        ]
+      },
+      {
         text: '淳渔CMS',
         link: 'http://cms.yinchunyu.com',
       },
