@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>截取视频封面</title>
+</head>
+<body>
+
+<video id="video" controls style="width: 340px; height: 200px"></video>
+<br/>
+<img id="img" src="" alt="">
+<br/>
+<input id="fileInput" type="file" name="file">
+<br/>
+<button onclick="getCurrentTime()">截取封面</button>
+
+<script>
+  const videoDom = document.querySelector('#video')
+  const fileInput = document.querySelector('#fileInput')
+  const img = document.querySelector('img')
+  let videoWidth = 0, videoHeight = 0;
+
+  fileInput.addEventListener('change', e => {
+    if (!e.target.files || !e.target.files[0]) return;
+    const _file = e.target.files[0];
+
+    console.log(_file)
+
+    videoDom.setAttribute('src', URL.createObjectURL(_file))
+  })
+
+  videoDom.addEventListener('canplay', function () {
+    videoWidth = this.videoWidth
+    videoHeight = this.videoHeight
+  });
+
+  function getCurrentTime() {
+    const src = videoDom.getAttribute('src')
+
+    let video = document.createElement("video");
+    video.setAttribute('src', src);
+    video.setAttribute('width', videoWidth);
+    video.setAttribute('height', videoHeight);
+    video.setAttribute('crossOrigin','anonymous');
+    video.currentTime = videoDom.currentTime || 1
+    video.addEventListener('loadeddata', function() {
+      let canvas = document.createElement("canvas"),
+        width = video.width,
+        height = video.height;
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext("2d").drawImage(video, 0, 0, width, height);
+      const dataURL = canvas.toDataURL('image/jpeg',0.8);
+
+      img.setAttribute('src', dataURL)
+    });
+  }
+</script>
+
+</body>
+</html>
