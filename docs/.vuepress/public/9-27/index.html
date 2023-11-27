@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='https://unpkg.com/tesseract.js@v2.0.0-beta.1/dist/tesseract.min.js'></script>
+</head>
+<body>
+<img src="a.png" alt="" id="img" style="width: 400px; height: auto">
+<button onclick="start()">识别文字</button>
+<div id="content" contenteditable="true"></div>
+
+<input type="file" id="uploader">
+<script>
+  async function start() {
+    const img = document.getElementById('img')
+    const content = document.getElementById('content')
+
+    const { data: { text } } = await Tesseract.recognize(img, 'chi_sim', {
+      langPath: '',
+      logger: m => console.log(m),
+    });
+    content.innerText = text
+  }
+
+
+  const recognize = async ({ target: { files }  }) => {
+    const { data: { text } } = await Tesseract.recognize(files[0], 'chi_sim', {
+      logger: m => console.log(m),
+    });
+    console.log(text);
+  }
+  const elm = document.getElementById('uploader');
+  elm.addEventListener('change', recognize);
+
+// https://tessdata.projectnaptha.com/
+// https://tesseract-ocr.github.io/tessdoc/Data-Files#data-files-for-version-400-november-29-2016
+</script>
+</body>
+</html>

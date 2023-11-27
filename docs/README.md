@@ -3,7 +3,7 @@ home: true
 title: Nuxt3实战教程-实战手把手 视频图文教程 轻松上手
 heroText: Nuxt3实战教程
 tagline: 实战手把手 视频图文教程，轻松上手
-heroImage: https://nuxt.com.cn/assets/design-kit/logo/icon-green.svg
+heroImage: https://nuxt.com.cn/assets/design-kit/icon-green.svg
 actions:
 - text: 开始学习
   link: /nuxt3
