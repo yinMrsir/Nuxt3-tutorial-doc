@@ -1,26 +1,27 @@
 ---
 home: true
-title: Nuxt3实战教程-实战手把手 视频图文教程 轻松上手
-heroText: Nuxt3实战教程
-tagline: 实战手把手 视频图文教程，轻松上手
-heroImage: https://nuxt.com.cn/assets/design-kit/icon-green.svg
+title: 前端老鹰-为了分享更多前端知识～
+heroText: 前端老鹰
+tagline: 更多前端知识点尽在B站和抖音～
 actions:
-- text: 开始学习
-  link: /nuxt3
+- text: B站
+  link: https://space.bilibili.com/397874328
   type: primary
-- text: 演示
-  link: https://cms.yinchunyu.com
+- text: 抖音
+  link: https://www.douyin.com/user/MS4wLjABAAAAUKMCVZGbQl7etrdd36GBIG6OGxClOwoHci_-PIlxNvE
   type: secondary
 features:
-- title: Vue3支持
-  details: Nuxt3框架的一个重要特点是它完全支持Vue 3。
-- title: Vite集成
-  details: 通过与Vite的集成，Nuxt3能够更好地利用Vite的高性能特点，加速开发过程，并提供更好的开发体验。
-- title: 更灵活的配置
-  details: 通过采用现代化的配置语法，开发者可以更方便地进行个性化的配置和定制。
-- title: 更好的性能
-  details: 通过结合Vue 3和Vite的优势，使应用程序加载更快、响应更快，提供更好的用户体验。
-- title: 支持多模式
-  details: 支持不同的渲染模式，包括CSR、SSG和SSR，可以根据需求选择合适的模式。
+- title: HTML
+  details: 超文本标记语言是一种用于创建网页的标准标记语言
+- title: CSS
+  details: 是一种用来为结构化文档添加样式的计算机语言，CSS 文件扩展名为 .css。
+- title: JavaScript
+  details: Web的编程语言, 所有现代的 HTML 页面都可以使用。
+- title: Vue
+  details: 易学易用，性能出色，适用场景丰富的 Web 前端框架。
+- title: React
+  details: 一个用于构建交互式界面的库，可以让你通过组件来创建和更新用户界面。
+- title: Three.js
+  details: 基于webGL的封装的一个易于使用且轻量级的3D库。
 footer: MIT Licensed | Copyright © 2016-present yinchunyu.com
 ---
